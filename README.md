@@ -26,5 +26,5 @@ if (oSession.fullUrl.Contains("quan.qq.com"))
 ```
 OpenTextFile方法中的第一个参数为第二步项目所在位置，即指定Fiddler将数据包内容保存在项目目录下的的Session.txt中。
 ![ERROR](https://github.com/LogicJake/wechat_auto_answer/raw/master/pic/js.png)
-3. 运行项目中auto_answer.py，打开智力超人开始对战。程序会自动搜索题目，然后显示搜索结果中各个答案出现的次数，以供判断。  
+4. 运行项目中auto_answer.py，打开智力超人开始对战。程序会自动搜索题目，然后显示搜索结果中各个答案出现的次数，以供判断。  
 ![ERROR](https://github.com/LogicJake/wechat_auto_answer/raw/master/pic/answer.png)
