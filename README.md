@@ -5,6 +5,7 @@
 ![Travis](https://img.shields.io/travis/rust-lang/rust.svg)
 
 ## 使用方法
+### Fiddler监听
 1. 下载Fiddler，根据[教程](https://testerhome.com/topics/3939)搭建好抓包环境，最后一步手机上一定要安装好FiddlerRoot证书。安卓手机一般在设置里的安全设置里从SD卡安装证书。至此fiddler可以抓取到手上的https数据包。
 如果设置成功，打开微信智力超人可以抓取到下面图中红线框中的数据包。    
 ![ERROR](https://github.com/LogicJake/wechat_auto_answer/raw/master/pic/success.png)
@@ -28,3 +29,10 @@ OpenTextFile方法中的第一个参数为第二步项目所在位置，即指�
 ![ERROR](https://github.com/LogicJake/wechat_auto_answer/raw/master/pic/js.png)
 4. 运行项目中auto_answer.py，打开智力超人开始对战。程序会自动搜索题目，然后显示搜索结果中各个答案出现的次数，以供判断。  
 ![ERROR](https://github.com/LogicJake/wechat_auto_answer/raw/master/pic/answer.png)
+### mitmproxy监听()
+采用mitmproxy监听可以直接在答题选项后面显示搜索结果数，但由于智力超人在答题过程中不断发起请求，可能造成题目搜索受到影响，从而造成选项搜索数都为0。
+1. 安装[mitmproxy](https://github.com/mitmproxy/mitmproxy)，手机配置好证书。
+2. window只能使用mitmdump命令，其他平台可以使用mitmproxy命令。
+3. 在项目根目录执行命令：  
+Window：mitmdump -s listen.py  
+Linux等：mitmproxy -s listen.py
