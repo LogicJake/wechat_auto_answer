@@ -8,6 +8,7 @@ from watchdog.events import FileSystemEventHandler
 from urllib.parse import quote
 import string
 import requests
+
 order = 0
 
 class LoggingEventHandler(FileSystemEventHandler):
@@ -17,7 +18,6 @@ class LoggingEventHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if (event.src_path).find("Session.txt") != -1:
             start_work()
-
 
 def start_work():
     try:
@@ -70,4 +70,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
-    #start_work()
